@@ -1,0 +1,26 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.card__image {
+    width: 100%;
+}
+.card__image img {
+    width: 100%;
+    border-radius: 5px;
+}
+.card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+.product-item {
+    width: 20rem;
+    max-width: 95%;
+    margin: 1rem;
+}
+/* .col-4 , .col-8{
+    border: 1px solid black ; 
+} */
+
+

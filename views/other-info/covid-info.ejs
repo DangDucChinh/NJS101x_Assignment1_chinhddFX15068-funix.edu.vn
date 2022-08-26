@@ -35,6 +35,7 @@
                     <div class="row">
                         <div class="col-12 col-md-4 col-lg-4">
                             <form action="/covid-info/temperature" method="POST">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                 <div class="form-control">
                                     <lable for="nhietdo">Nhiệt Độ</lable>
                                     <input type="text" name="nhietdo" id="nhietdo" />
@@ -53,6 +54,7 @@
 
                         <div class="col-12 col-md-4 col-lg-4">
                             <form action="/covid-info/vaccineInfo" method="POST">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                 <div class="form-control">
                                     <lable for="mui1">Tên Vaccine Mũi 1</lable>
                                     <input type="text" name="mui1" id="mui1" />
@@ -75,6 +77,7 @@
 
                         <div class="col-12 col-md-4 col-lg-4">
                             <form action="/covid-info/infectCovidInfo" method="POST">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                 <div class="form-control">
                                     <lable for="nhiemcovid">Ngày Nhiễm Covid</lable>
                                     <input type="date" name="nhiemcovid" id="nhiemcovid" />

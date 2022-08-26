@@ -3,17 +3,20 @@ const express = require("express");
 const musterController = require("../controllers/muster");
 
 const router = express.Router();
+const isAuth = require('../midlleware/is-auth');
+const isAdmin = require('../midlleware/is-admin');
 
-router.get("/muster", musterController.getMuster);
 
-router.get("/muster/checkin", musterController.getCheckIn);
+router.get("/muster",isAuth,isAdmin ,   musterController.getMuster);
 
-router.post("/muster/checkin", musterController.postCheckIn);
+router.get("/muster/checkin",isAuth,isAdmin ,  musterController.getCheckIn);
 
-router.post("/muster/checkout", musterController.postCheckOut);
+router.post("/muster/checkin",isAuth , isAdmin ,   musterController.postCheckIn);
 
-router.get("/muster/off", musterController.getOff);
+router.post("/muster/checkout",isAuth ,isAdmin ,   musterController.postCheckOut);
 
-router.post("/muster/off", musterController.postOff);
+router.get("/muster/off",isAuth ,isAdmin ,   musterController.getOff);
+
+router.post("/muster/off", isAuth ,isAdmin ,   musterController.postOff);
 
 module.exports = router;

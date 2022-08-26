@@ -15,6 +15,7 @@
                             <input type="number" name="annualLeave" id="annualLeave" disabled placeholder="<%= staffs.name %>" />
                         </div>
                         <form action="/muster/checkin" method="POST">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                             <div class="form-group">
                                 <label for="workdress">Nơi làm việc</label>
                                 <select name="workdress" id="workdress">

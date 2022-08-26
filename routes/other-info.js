@@ -3,22 +3,22 @@ const express = require("express");
 const otherInfoController = require("../controllers/other-info");
 
 const router = express.Router();
+const isAuth = require('../midlleware/is-auth');
+const isAdmin = require('../midlleware/is-admin');
 
-router.get("/staff-info", otherInfoController.getStaffInfo);
 
-router.post("/staff-info", otherInfoController.postStaffInfo) ; 
+router.get("/staff-info",isAuth ,isAdmin ,   otherInfoController.getStaffInfo);
 
-router.get("/work-info", otherInfoController.getWorkInfo);
+router.post("/staff-info",isAuth ,isAdmin ,   otherInfoController.postStaffInfo) ; 
 
-router.get("/covid-info", otherInfoController.getCovidInfo);
+router.get("/work-info",isAuth ,isAdmin ,  otherInfoController.getWorkInfo);
 
-router.post("/covid-info/temperature", otherInfoController.postBodyTemperature);
+router.get("/covid-info",isAuth,isAdmin ,   otherInfoController.getCovidInfo);
 
-router.post("/covid-info/vaccineInfo", otherInfoController.postVaccineInfo);
+router.post("/covid-info/temperature",isAuth ,isAdmin ,   otherInfoController.postBodyTemperature);
 
-router.post(
-  "/covid-info/infectCovidInfo",
-  otherInfoController.postInfectCovidInfo
-);
+router.post("/covid-info/vaccineInfo",isAuth , isAdmin , otherInfoController.postVaccineInfo);
+
+router.post("/covid-info/infectCovidInfo",isAuth ,isAdmin,   otherInfoController.postInfectCovidInfo);
 
 module.exports = router;

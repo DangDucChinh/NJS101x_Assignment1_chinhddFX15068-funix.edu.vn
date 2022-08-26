@@ -1,8 +1,10 @@
 const Staff = require("../models/staff");
 
 exports.getStaffInfo = (req, res, next) => {
+  
   Staff.findById(req.staff._id)
     .then((staff) => {
+      console.log(staff) ; 
       console.log("staffs-info", staff.workTimes);
       res.render("other-info/staff-info", {
         path: "/staff-info",

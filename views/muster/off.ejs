@@ -12,11 +12,13 @@
                         <div class="form-group">
                             <h3>Ngày nghỉ của bạn đã hết...!</h3>
                             <form action="/" method="get">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                 <button class="btn">Quay lại</button>
                             </form>
                         </div>
                     <% } else { %>
                         <form action="/muster/off" method="POST" class="product-form" >
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                             <div class="form-group">
                                 <label for="annualLeave">Số ngày nghỉ còn lại</label>
                                 <input class="form-control" type="number" name="annualLeave" id="annualLeave" disabled value="<%= staffs.annualLeave %>" />

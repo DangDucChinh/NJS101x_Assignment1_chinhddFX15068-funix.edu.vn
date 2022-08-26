@@ -2,6 +2,7 @@ const Staff = require("../models/staff");
 const moment = require("moment");
 
 exports.getMuster = (req, res, next) => {
+  // console.log(req.staff._id); 
   Staff.findById(req.staff._id)
     .then((staff) => {
       // console.log(staff);
@@ -15,6 +16,7 @@ exports.getMuster = (req, res, next) => {
 };
 
 exports.getCheckIn = (req, res, next) => {
+  // console.log(req.staff._id); 
   Staff.findById(req.staff._id)
     .then((staff) => {
       // console.log("getCheckIn", staff);

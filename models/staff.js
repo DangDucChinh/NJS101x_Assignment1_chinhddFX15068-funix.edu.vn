@@ -2,32 +2,43 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const staffSchema = new Schema({
+  admin: {
+    type: Boolean,
+  },
+  email : {
+    type: String , 
+    required : true
+  } ,
+  password : {
+    type: String,
+    required : true
+  },
   name: {
     type: String,
-    required: true,
+    // required: true,
   },
   doB: {
     type: Date,
-    required: true,
+    // required: true,
   },
   salaryScale: {
     type: Number,
-    required: true,
+    // required: true,
   },
   startDate: {
     type: Date,
-    required: true,
+    // required: true,
   },
   department: {
     type: String,
-    required: true,
+    // required: true,
   },
   annualLeave: {
     type: Number,
   },
   image: {
     type: String,
-    required: true,
+    // required: true,
   },
   workStatus: { type: Boolean },
   workTimes: [
